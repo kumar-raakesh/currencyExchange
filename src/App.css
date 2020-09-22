@@ -36,3 +36,45 @@
     transform: rotate(360deg);
   }
 }
+
+.container{
+  /* display: flex; */
+  justify-content: center;
+}
+.heading{
+text-align: center;}
+.content{
+  display: flex;
+  justify-content: center;
+}
+.input_amountBox{
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
+.amountBox{
+  width: 300px;
+  height: 300px;
+  margin-right: 2px;
+  border-radius: 1px solid green;
+  background: chocolate;
+}
+.amount_heading{
+  text-align: center;
+}
+.inputBox{
+  display: flex;
+  height: 30px;
+  justify-content: center;
+}
+.drop_downList{
+  display: flex;
+  justify-content: center;
+  margin-top: 6px;
+}
+.button_style{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100px;
+}
