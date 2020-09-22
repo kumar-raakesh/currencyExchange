@@ -12,11 +12,10 @@ class App extends React.Component {
       to: '',
       responseData: ''
     }
-    this.handleInput = this.handleInput.bind(this)
+    // this.handleInput = this.handleInput.bind(this)
   }
 
   handleConvertCurrency = async () => {
-
     if (this.state.from && this.state.to && this.state.amount && this.state.from != this.state.to) {
       let url = `https://api.frankfurter.app/latest?amount=${this.state.amount}&from=${this.state.from}&to=${this.state.to}`;
       try {
@@ -33,7 +32,7 @@ class App extends React.Component {
     }
 
   }
-  handleInput(value) {
+  handleInput = (value) => {
     this.setState({
       from: value.label
     })
@@ -52,7 +51,6 @@ class App extends React.Component {
   render() {
     const from = this.state.from
     const to = this.state.to
-    const buttonDisable = !this.state.to && !this.state.from && !this.state.amount
     const options = [
       "AUD",
       "BGN",
@@ -117,7 +115,8 @@ class App extends React.Component {
 
           <div className="button_style">
             <button onClick={this.handleConvertCurrency}
-            // disabled={true}
+              disabled={this.state.from && this.state.to && this.state.amount && this.state.from != this.state.to ? false : true}
+              style={{ opacity: this.state.from && this.state.to && this.state.amount && this.state.from != this.state.to ? 0.8 : 0.9 }}
             >
               Convert
             </button>
@@ -130,6 +129,7 @@ class App extends React.Component {
                 <input
                   type='text'
                   placeholder={"0"}
+                  readOnly={true}
                   value={this.state.responseData.rates && this.state.responseData.rates[this.state.to]}
                 />
               </div>

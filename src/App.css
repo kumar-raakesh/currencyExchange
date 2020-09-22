@@ -51,13 +51,15 @@ text-align: center;}
   display: flex;
   justify-content: center;
   flex-direction: row;
+  border: 1px solid black;
+  border-radius: 2px;
 }
 .amountBox{
   width: 300px;
   height: 300px;
   margin-right: 2px;
-  border-radius: 1px solid green;
-  background: chocolate;
+  border-radius: 1px solid black;
+  background:whitesmoke;
 }
 .amount_heading{
   text-align: center;
